@@ -3,7 +3,7 @@
 # ==============================
 
 # 브라우저 탭, 상단 헤더에 표시되는 사이트 이름
-site_name: ArkLab Manuals
+site_name: Manuals
 # 검색엔진, PDF 메타데이터 등에 사용
 site_description: Internal product & engineering manuals
 site_author: ArkData Dev Team
@@ -27,17 +27,10 @@ edit_uri: edit/main/docs/
 # ==============================
 
 theme:
-  #name: rtd-dropdown
-  #name: bootstrap
-  name: cinder
-  #name: material
+  name: material
   language: ko            # 한글 UI
   logo: assets/logo.png   # 좌측 상단 로고 (선택)
   favicon: assets/favicon.ico
-  highlightjs: true
-  hijs_languages:
-    - yaml
-    - rust
 
   features:
     # 네비게이션 관련
@@ -53,15 +46,16 @@ theme:
     - search.suggest
 
   palette:
-    # 라이트 모드
-    - scheme: default
-      primary: blue
-      accent: indigo
-
-    # 다크 모드
+    # Light mode + Dark mode toggle
+    # - scheme: default
+    - scheme: blue gray
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
     - scheme: slate
-      primary: blue
-      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
 
 
 # ==============================
@@ -69,26 +63,26 @@ theme:
 # ==============================
 
 markdown_extensions:
-  - admonition
   # !!! note / warning / tip 같은 블록
+  - admonition
 
+  # 우측 목차 + 헤더 링크
   - toc:
       permalink: true
-  # 우측 목차 + 헤더 링크
 
-  - pymdownx.superfences
   # 코드블록 중첩, mermaid 지원에 필수
+  - pymdownx.superfences
 
+  # 탭 UI (OS별 설치 가이드 등에 유용)
   - pymdownx.tabbed:
       alternate_style: true
-  # 탭 UI (OS별 설치 가이드 등에 유용)
 
-  - pymdownx.details
   # 접고 펼치는 상세 블록
+  - pymdownx.details
 
+  # 코드 하이라이팅 강화
   - pymdownx.highlight
   - pymdownx.inlinehilite
-  # 코드 하이라이팅 강화
 
 
 # ==============================
@@ -100,15 +94,15 @@ plugins:
   # 기본 검색
 
   # PDF 출력 (선택)
-  - pdf-export:
-      combined: true
-      verbose: true
+  # - pdf-export:
+  #     combined: true
+  #     verbose: true
 
   # 다국어 (필요 시)
-  - i18n:
-      languages:
-        ko: "한국어"
-        en: "English"
+  # - i18n:
+      # languages:
+        # ko: "한국어"
+        # en: "English"
 
 
 # ==============================

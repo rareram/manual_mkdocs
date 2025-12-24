@@ -437,22 +437,19 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "mkdocs" },
-    { name = "mkdocs-bootstrap" },
     { name = "mkdocs-cinder" },
     { name = "mkdocs-material" },
     { name = "mkdocs-pdf-export-plugin" },
-    { name = "mkdocs-rtd-dropdown" },
+    { name = "pymdown-extensions" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "mkdocs", specifier = ">=1.6.1" },
-    { name = "mkdocs-bootstrap" },
     { name = "mkdocs-cinder", specifier = ">=1.2.0" },
     { name = "mkdocs-material" },
-    { name = "mkdocs-material", specifier = ">=9.7.1" },
     { name = "mkdocs-pdf-export-plugin", specifier = ">=0.5.10" },
-    { name = "mkdocs-rtd-dropdown" },
+    { name = "pymdown-extensions" },
 ]
 
 [[package]]
@@ -583,18 +580,6 @@ wheels = [
 ]
 
 [[package]]
-name = "mkdocs-bootstrap"
-version = "1.1.1"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "mkdocs" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/ec/b2/2a344013516ab6d50e356cf56430272a1ca3aca304063044a8712b29683c/mkdocs-bootstrap-1.1.1.tar.gz", hash = "sha256:c8ec5eb3a1dbd54f8285414a710bd023edb501946a48d9f37de8c835b7f44158", size = 27956, upload-time = "2023-07-28T13:46:09.213Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/43/6f/043244794af9552fea39acfd95fd4d16167fbfdf97bb26727fecd00de9b9/mkdocs_bootstrap-1.1.1-py2.py3-none-any.whl", hash = "sha256:dc544bdc95b7054578093da466482ded8633075b987f3269828a252f48848392", size = 27926, upload-time = "2023-07-28T13:46:07.671Z" },
-]
-
-[[package]]
 name = "mkdocs-cinder"
 version = "1.2.0"
 source = { registry = "https://pypi.org/simple" }
@@ -661,15 +646,6 @@ sdist = { url = "https://files.pythonhosted.org/packages/ae/3c/5dd22c24873cb8ddd
 wheels = [
     { url = "https://files.pythonhosted.org/packages/37/51/1ee5dd2b18acd7c18580cb6b58190d3e7a07c8719d6fd7fd58136a236ccc/mkdocs_pdf_export_plugin-0.5.10-py3-none-any.whl", hash = "sha256:e6e58f8bdedb300423336b00ea1846516f471b529ea85cb7f254fa2a2ee577d8", size = 10810, upload-time = "2021-10-05T01:33:27.436Z" },
 ]
-
-[[package]]
-name = "mkdocs-rtd-dropdown"
-version = "1.0.2"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "mkdocs" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/2c/ea/e6aa17ab07e860e88e61cd6535df347c712051aac535ae9c4b0b2de34b0a/mkdocs-rtd-dropdown-1.0.2.tar.gz", hash = "sha256:183f2f2cd7b9305addb031a1d526e933102d319de48ee3fcafb960b3ed7ee491", size = 248289, upload-time = "2018-08-20T04:28:03.793Z" }
 
 [[package]]
 name = "packaging"
