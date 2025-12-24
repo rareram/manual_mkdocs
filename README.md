@@ -1,4 +1,4 @@
-# 사내 매뉴얼 (Internal Manuals)
+# 파일럿 매뉴얼 (Pilot Internal Manuals)
 
 이 프로젝트는 ArkData의 사내 매뉴얼을 위한 프로토타입 저장소입니다. 제품별 문서, 엔지니어링 가이드, 인프라 구성 매뉴얼 등 다양한 내부 지식들을 체계적으로 관리하고 공유하기 위해 [MkDocs](https://www.mkdocs.org/)를 활용합니다. 모든 문서는 Markdown으로 작성되며, GitHub를 통해 손쉽게 업데이트 및 버전 관리가 가능합니다.
 

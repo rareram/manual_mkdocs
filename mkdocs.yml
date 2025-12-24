@@ -2,24 +2,21 @@
 # 1. 사이트 기본 정보
 # ==============================
 
-site_name: Internal Manuals
 # 브라우저 탭, 상단 헤더에 표시되는 사이트 이름
-
-site_description: Internal product & engineering manuals
+site_name: ArkLab Manuals
 # 검색엔진, PDF 메타데이터 등에 사용
-
-site_author: ArkData Engineering Team
-
-site_url: https://manual.internal.example
+site_description: Internal product & engineering manuals
+site_author: ArkData Dev Team
 # 내부망이면 없어도 무방, 외부 공개 시 권장
+site_url: https://manual.internal.example
 
 
 # ==============================
 # 2. Repository 연동 (선택)
 # ==============================
 
-repo_name: arkdata/manuals
-repo_url: https://git.example.com/arkdata/manuals
+repo_name: rareram/manual_mkdocs
+repo_url: https://github.com/rareram/manual_mkdocs
 edit_uri: edit/main/docs/
 # Git 기반 운영 시 "Edit this page" 버튼 활성화 가능
 # 내부 전용이면 아예 제거해도 됨
@@ -103,15 +100,15 @@ plugins:
   # 기본 검색
 
   # PDF 출력 (선택)
-  # - pdf-export:
-  #     combined: true
-  #     verbose: true
+  - pdf-export:
+      combined: true
+      verbose: true
 
   # 다국어 (필요 시)
-  # - i18n:
-  #     languages:
-  #       ko: "한국어"
-  #       en: "English"
+  - i18n:
+      languages:
+        ko: "한국어"
+        en: "English"
 
 
 # ==============================
@@ -153,23 +150,22 @@ nav:
   - '개발 가이드':
     - '소개': 'guides/index.md'
 
+
 # ==============================
 # 7. 정적 리소스
 # ==============================
 
 extra_css:
-  - styles/custom.css
 # UI 미세 조정 (폰트, 폭, 색상 등)
-
+  - styles/custom.css
+# 필요 시만 사용 (보통은 없어도 충분)
 extra_javascript:
   - js/custom.js
-# 필요 시만 사용 (보통은 없어도 충분)
 
 
 # ==============================
 # 8. 빌드 출력 설정
 # ==============================
-
+# 기본값이므로 보통 수정 불필요
 docs_dir: docs
 site_dir: site
-# 기본값이므로 보통 수정 불필요
