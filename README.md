@@ -1,19 +1,56 @@
-# 라이브러리 설치
+# 사내 매뉴얼 (Internal Manuals)
 
-uv init
-uv add mkdocs mkdocs-material mkdocs-pdf-export-plugin
+이 프로젝트는 ArkData의 사내 매뉴얼을 위한 프로토타입 저장소입니다. 제품별 문서, 엔지니어링 가이드, 인프라 구성 매뉴얼 등 다양한 내부 지식들을 체계적으로 관리하고 공유하기 위해 [MkDocs](https://www.mkdocs.org/)를 활용합니다. 모든 문서는 Markdown으로 작성되며, GitHub를 통해 손쉽게 업데이트 및 버전 관리가 가능합니다.
 
-# Theme
+## 시작하기
 
-uv add mkdocs-rtd-dropdown mkdocs-material mkdocs-bootstrap
+### 1. 환경 설정
 
-theme:
-  name: 'rtd-dropdown'
-  name: 'material'
-  name: 'bootstrap'
+필수사항은 아니지만 `uv` (Ultrafast Python package installer and resolver)로 환경 구성을 권장합니다. 설치되어 있지 않다면 다음 명령으로 설치하세요:
 
-# 실행
+```bash
+pip install uv
+```
 
-uv run mkdocs --version
-uv run mkdocs new .
+프로젝트 의존성을 설치합니다:
+
+```bash
+uv add mkdocs mkdocs-cinder
+```
+
+### 2. 문서 실행
+
+로컬 환경에서 문서를 빌드하고 미리 볼 수 있습니다.
+
+```bash
 uv run mkdocs serve
+```
+
+이 명령을 실행하면 웹 서버가 시작되고, 브라우저에서 `http://127.0.0.1:8000` (또는 등록한 외부 주소)으로 접속하여 매뉴얼을 확인할 수 있습니다.
+
+### 3. 프로젝트 구조
+
+*   `mkdocs.yml`: MkDocs 설정 파일. 사이트 이름, 테마, 플러그인 및 문서 구조(네비게이션) 등을 정의합니다. 현재는 `cinder` 테마가 적용되어 있습니다.
+*   `docs/`: 모든 Markdown 문서 파일이 위치하는 디렉토리입니다. 이 안에 이미지, 스크립트 등 정적 리소스도 포함됩니다.
+
+    *   `docs/index.md`: 메인 페이지입니다.
+    *   `docs/assets/`: 이미지, 파비콘 등 정적 파일.
+    *   `docs/styles/`: 커스텀 CSS 파일.
+    *   `docs/js/`: 커스텀 JavaScript 파일.
+
+### 4. 매뉴얼 카테고리
+
+사내 매뉴얼은 다음과 같은 큰 카테고리로 구성될 예정입니다. `docs/` 디렉토리 내에 해당 카테고리에 맞는 Markdown 파일을 생성하여 문서를 추가할 수 있습니다.
+구성은 언제든 바뀔 수 있습니다.
+
+*   **제품별 (유저) 매뉴얼**: 각 제품의 사용자 가이드 및 기능 설명.
+*   **제품별 (엔지니어를 위한) 매뉴얼**: 각 제품의 아키텍처, 개발 가이드, 배포 절차 등 엔지니어를 위한 문서.
+*   **제품 개발환경용 인프라**: 개발 환경 설정, 도구 사용법, 환경 구성에 대한 문서.
+*   **컴포넌트 구성 매뉴얼**: 재사용 가능한 컴포넌트들의 사용법, 설계 원칙, 버전 관리.
+*   **사내 인프라 개선 매뉴얼**: 내부 시스템 및 인프라 개선 프로젝트, 운영 가이드.
+
+### 5. 문서 작성 및 업데이트
+
+`docs/` 디렉토리 내에 Markdown 파일을 생성하거나 수정하여 문서를 작성합니다. `mkdocs.yml` 파일에서 `nav` 섹션을 업데이트하여 문서의 네비게이션 구조를 변경할 수 있습니다.
+
+작성된 문서는 GitHub를 통해 관리되며, 변경사항은 Git을 통해 커밋하고 푸시하여 반영합니다.
