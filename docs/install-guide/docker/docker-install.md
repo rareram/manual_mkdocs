@@ -6,7 +6,7 @@
 
 사용 중인 운영체제에 맞는 탭을 선택하여 설치를 진행하세요.
 
-=== "Windows" 
+=== ":fontawesome-brands-windows: Windows" 
 
     Windows 10/11 환경에서는 WSL 2 (Windows Subsystem for Linux 2)를 기반으로 동작하는 **Docker Desktop**을 설치합니다.
 
@@ -35,7 +35,7 @@
     ```
     `hello-world` 컨테이너가 성공적으로 실행되면 설치가 완료된 것입니다.
 
-=== "macOS" 
+=== ":material-apple: macOS" 
 
     macOS 환경에서도 GUI 도구를 포함하는 **Docker Desktop**을 설치합니다.
 
@@ -62,7 +62,7 @@
     docker run hello-world
     ```
 
-=== "Linux (Ubuntu/Debian)" 
+=== ":material-ubuntu: Linux (Ubuntu/Debian)" 
 
     서버 환경인 Ubuntu/Debian에서는 Docker의 공식 `apt` 저장소를 등록하여 **Docker Engine**을 설치하는 것을 권장합니다.
 
@@ -121,7 +121,7 @@
     docker run hello-world
     ```
 
-=== "Linux (RHEL/CentOS/Rocky)" 
+=== ":material-fedora: Linux (RHEL/Fedora/Rocky)" 
 
     RHEL 계열 Linux에서는 Docker의 공식 `yum`/`dnf` 저장소를 등록하여 **Docker Engine**을 설치합니다.
 

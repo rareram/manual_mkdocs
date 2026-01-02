@@ -64,6 +64,26 @@
   text-decoration: underline; /* hover 시에만 밑줄 표시 */
 }
 
+/* 하위 리스트 들여쓰기 간격 강조 */
+/* 1레벨 리스트: 검은 원 (기본값) */
+.md-typeset ul li {
+    margin-left: 1.5em;
+    list-style-type: disc;
+}
+
+/* 2레벨 리스트: 빈 원 */
+.md-typeset ul li ul li {
+    margin-left: 1.5em;
+    list-style-type: circle;
+}
+
+/* 3레벨 리스트: 검은 네모 */
+.md-typeset ul li ul li ul li {
+    margin-left: 1.5em;
+    list-style-type: square;
+}
+
+
 /* 다크모드 대응 (링크 색상 밝게) */
 [data-md-color-scheme="slate"] .md-typeset a {
     color: #82b1ff; /* Material Design의 밝은 파란색 */

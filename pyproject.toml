@@ -9,5 +9,10 @@ dependencies = [
     "mkdocs-pdf-export-plugin>=0.5.10",
     "mkdocs-cinder>=1.2.0",
     "pymdown-extensions",
-    "mkdocs-material",
+    "mkdocs-material[imaging]",
+    "mkdocs-glightbox>=0.5.2",
+    "mkdocs-awesome-pages-plugin>=2.10.1",
+    "markdown-extensions>=0.0.1",
+    "mkdocs-mermaid2-plugin>=1.2.3",
+    "mkdocs-pdf>=0.1.2",
 ]

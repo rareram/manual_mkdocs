@@ -28,6 +28,7 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.indexes
+    - navigation.footer      # footer에 이전/다음 버튼 활성화
     - content.code.copy
     - content.tabs.link
     - search.highlight
@@ -51,18 +52,32 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 5
-  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: false         # 모든 코드 블럭에 라인번호 표시 (선택 사항)
+      pygments_lang_class: true
+  - pymdownx.superfences:
+      custom_fences:
+          - name: mermaid
+            class: mermaid
+            format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.details
-  - pymdownx.highlight
   - pymdownx.inlinehilite
+
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 # ==============================
 # 5. 플러그인
 # ==============================
 plugins:
   - search
+  - glightbox
+  - mkdocs-pdf
 
 # ==============================
 # 6. 네비게이션 (문서 트리)
@@ -75,14 +90,19 @@ nav:
           - 개요: products/tablediff/index.md
           - 개발산출물:
               - SRS: products/tablediff/artifact/adv.md
-          - 사용:
-              - 설치: products/tablediff/install.md
-      - PG CDC:
+          - 환경구성:
+              - 도커컴포즈 구성: products/tablediff/getting-started/docker-compose.md
+          - 기능테스트:
+              - 개요: products/tablediff/usages/index.md
+              - 설정 파일 작성: products/tablediff/usages/config.md
+              - 실행 방법: products/tablediff/usages/cli.md
+              - 결과 확인: products/tablediff/usages/output.md
+      - PG CDC(가칭):
           - 소개: products/pgcdc/index.md
           - 환경구성:
               - 도커컴포즈 구성: products/pgcdc/getting-started/docker-compose.md
           - 기본 사용법:
-              - 데이터 변경 및 확인: products/pgcdc/basic-usage/data-change.md
+              - 데이터 변경 및 확인: products/pgcdc/usage/data-change.md
               - 버전별 테스트 환경: products/pgcdc/testing/docker-testing.md
   - 인스톨 가이드:
       - 개요: install-guide/index.md
@@ -95,12 +115,25 @@ nav:
           - 주요 옵션: install-guide/jvm/options.md
           - GC 관리: install-guide/jvm/gc-tuning.md
           - 트러블슈팅: install-guide/jvm/troubleshooting.md
+      - Oracle DB:
+          - 개요: install-guide/oracle/index.md
+          - 설치: install-guide/oracle/oracle-install.md
+          - 데이터베이스 및 사용자 생성: install-guide/oracle/database-setup.md
       - PostgreSQL:
           - 개요: install-guide/postgresql/index.md
           - 설치: install-guide/postgresql/postgresql-install.md
           - 데이터베이스 및 테이블 생성: install-guide/postgresql/database-setup.md
   - 인프라 가이드:
       - 소개: infra-guide/index.md
+      - OCI:
+          - 개요: infra-guide/oci/index.md
+          - 운영자:
+              - 개요: infra-guide/oci/operator/index.md
+              - 멀티테넌시 아키텍처: infra-guide/oci/operator/multi-tenancy-architecture.md
+          - 사용자:
+              - 개요: infra-guide/oci/user/index.md
+              - 명명 규칙 및 태그 정책: infra-guide/oci/user/naming-and-tagging.md
+              - 리소스별 상세 규칙: infra-guide/oci/user/resource-rules.md
 
 # ==============================
 # 7. 정적 리소스
@@ -113,6 +146,14 @@ extra_css:
 
 extra_javascript:
   - js/custom.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/rareram/manual_mkdocs
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/your-id
+
 
 # ==============================
 # 8. 빌드 출력 설정
